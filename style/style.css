@@ -1,0 +1,19 @@
+.input-group {
+    margin: 20px 0px;
+}
+
+tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+td {
+    flex-grow: 1;
+    flex-basis: 100%;
+}
+
+td:first-of-type,
+td:first-of-type>div {
+    height: 300px;
+    width: 250px;
+}
