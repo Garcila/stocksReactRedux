@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Chart from '../components/chart';
-import GoogleMap from '../components/google_map';
 
 class StockList extends Component {
   renderStock(stockData) {
 
-    const dates = Object.entries(stockData['Monthly Time Series']).map(e => e[0]);
-    const opens = Object.entries(stockData['Monthly Time Series']).map(e => parseFloat(e[1]['1. open']));
-    const closes = Object.entries(stockData['Monthly Time Series']).map(e => parseFloat(e[1]['4. close']));
-    const volumes = Object.entries(stockData['Monthly Time Series']).map(e => parseFloat(e[1]['5. volume']));
- 
-    console.log('opens ', opens);
+    //MDN "The Object.entries() method returns an array of a given object's own 
+    //enumerable property [key, value] pairs, in the same order as that provided by a for...in loop"
+    const data = Object.entries(stockData['Monthly Time Series']);
+    
+    const dates = data.map(date => date[0]);
+    const opens = data.map(date => parseFloat(date[1]['1. open']));
+    const closes = data.map(date => parseFloat(date[1]['4. close']));
+    const volumes = data.map(date => parseFloat(date[1]['5. volume']));
 
     return (
       <tr key={stockData['Meta Data']['2. Symbol']}>
-        {/* <td><GoogleMap lat={stockData.city.coord.lat} lon={stockData.city.coord.lon} /></td> */}
         <td>{stockData['Meta Data']['2. Symbol'].toUpperCase()}</td>
         <td>from {dates[0]} <br /> to {dates[dates.length - 1]}</td>
         <td><Chart data={opens} color='blue' /></td>
