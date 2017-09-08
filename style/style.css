@@ -2,6 +2,22 @@
     margin: 20px 0px;
 }
 
+.header {
+    margin-top: 5px;
+    height: 50px;
+    background-color: #494747;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px #B9B6B6;
+}
+
+.title {
+    font-size: 1.4em;
+    color: white;
+}
+
 tr {
     display: flex;
     justify-content: space-between;
