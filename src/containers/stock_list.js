@@ -18,9 +18,9 @@ class StockList extends Component {
         {/* <td><GoogleMap lat={stockData.city.coord.lat} lon={stockData.city.coord.lon} /></td> */}
         <td>{stockData['Meta Data']['2. Symbol'].toUpperCase()}</td>
         <td>from {dates[0]} <br /> to {dates[dates.length - 1]}</td>
-        <td><Chart data={opens} color='orange' units='$us' /></td>
-        <td><Chart data={closes} color='green' units='hPa' /></td>
-        <td><Chart data={volumes} color='black' units='%' /></td>
+        <td><Chart data={opens} color='blue' /></td>
+        <td><Chart data={closes} color='red' /></td>
+        <td><Chart data={volumes} color='black' /></td>
       </tr>
     );
   }

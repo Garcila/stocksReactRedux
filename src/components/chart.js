@@ -5,7 +5,7 @@ import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-spark
 export default (props) => {
   return (
     <div>
-      <Sparklines width={180} height={200} data={props.data}>
+      <Sparklines width={180} height={180} data={props.data}>
         <SparklinesLine color={props.color} />
       </Sparklines>
     </div>
